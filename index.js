@@ -2,6 +2,7 @@ const input = document.getElementsByTagName("textarea")[0];
 const submitBtn = document.getElementById("submitBtn");
 const newChatBtns = document.getElementsByClassName("new-chat-btn");
 const menuBtn = document.getElementById("menu-btn");
+const closeMenuBtn = document.getElementById("close-btn-mobile");
 const sideMenu = document.getElementById("left-menu");
 const chatSection = document.getElementById("chat-section");
 const blurBackground = document.getElementById("blur");
@@ -204,6 +205,18 @@ for (let i = 0; i < newChatBtns.length; i++) {
   };
 }
 
+const closeMenu = () => {
+  console.log("clicked");
+  if (showSideMenu) {
+    blurBackground.style.opacity = 0;
+    setTimeout(() => {
+      blurBackground.style.display = "none";
+    }, 500);
+    sideMenu.style.marginLeft = "-350px";
+    showSideMenu = false;
+  }
+};
+
 menuBtn.onclick = () => {
   if (!showSideMenu) {
     blurBackground.style.display = "block";
@@ -215,14 +228,5 @@ menuBtn.onclick = () => {
   }
 };
 
-blurBackground.onclick = () => {
-  console.log("clicked");
-  if (showSideMenu) {
-    blurBackground.style.opacity = 0;
-    setTimeout(() => {
-      blurBackground.style.display = "none";
-    }, 500);
-    sideMenu.style.marginLeft = "-300px";
-    showSideMenu = false;
-  }
-};
+blurBackground.onclick = closeMenu;
+closeMenuBtn.onclick = closeMenu;

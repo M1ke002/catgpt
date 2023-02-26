@@ -20,6 +20,10 @@ body {
     height: 100vh;
 }
 
+#close-btn-mobile {
+    display: none;
+}
+
 #left-menu {
     display: flex;
     flex-direction: column;
@@ -281,14 +285,27 @@ body {
         transition: all 0.3s ease-in-out;
         display: none;
     }
+
+    #close-btn-mobile {
+        display: block;
+        position: absolute;
+        left: 305px;
+        top: 10px;
+        width: 35px;
+        height: 35px;
+        background: transparent;
+        color: var(--white);
+        border: 1px solid hsla(0,0%,100%,.2);
+        font-size: 1.3rem;
+    }
+
     #left-menu {
         position: fixed;
         top: 0;
         left: 0;
         width: 300px;
-        margin-left: -300px;
+        margin-left: -350px;
         height: 100%;
-        overflow-x: hidden;
         transition: all 0.3s ease-out;
         z-index: 2;
     }
