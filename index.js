@@ -161,8 +161,6 @@ const createUserChatElement = (userInput) => {
 };
 
 const createBotReplyElement = async (userInput) => {
-  const data = await getCatImage();
-  console.log(data);
   const numberOfChildren = chatSection.childElementCount;
   const message = generateMeowString(userInput);
   const html = `
@@ -178,9 +176,10 @@ const createBotReplyElement = async (userInput) => {
         `;
   const htmlElement = document.createElement("div");
   htmlElement.classList.add("chat-reply");
-  htmlElement.style.marginBottom = "100px";
+  htmlElement.style.marginBottom = "200px";
   htmlElement.innerHTML = html;
   chatSection.appendChild(htmlElement);
+  htmlElement.scrollIntoView();
 
   const placeholder = document.getElementById(
     `reply-message-${numberOfChildren}`
