@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>CatGPT</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="left-menu">
+        <button class="new-chat-btn">
+          <i class="fa-regular fa-plus" style="margin-right: 5px"></i>
+          New cat
+        </button>
+        <div id="settings">
+          <hr />
+          <button>
+            <i class="fa-solid fa-cat"></i>
+            Donate to us
+          </button>
+          <button>
+            <i class="fa-solid fa-sun"></i>
+            Light mode
+          </button>
+          <button>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            Log out
+          </button>
+        </div>
+      </div>
+      <div id="blur"></div>
+      <!-- menu for mobile -->
+      <div id="mobile-menu">
+        <button id="menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <p>New cat</p>
+        <button class="new-chat-btn btn-mobile">
+          <i class="fa-regular fa-plus"></i>
+        </button>
+      </div>
+
+      <div id="main">
+        <div id="chat-section">
+          <!-- <div class="user-chat">
+            <div class="text">
+              <img
+                src="https://chat.openai.com/_next/image?url=https%3A%2F%2Fs.gravatar.com%2Favatar%2F74ec94e227567937e61f6a842c1b029f%3Fs%3D480%26r%3Dpg%26d%3Dhttps%253A%252F%252Fcdn.auth0.com%252Favatars%252Fho.png&w=32&q=75"
+                alt=""
+                class="avatar"
+              />
+              <p>In cryptography, what is this</p>
+            </div>
+          </div>
+          <div class="chat-reply">
+            <div class="text">
+              <img
+                src="https://catgpt.wvd.io/avatar.png"
+                alt=""
+                class="avatar"
+              />
+              <div>
+                <img
+                  src="https://cdn2.thecatapi.com/images/2og.jpg"
+                  width="350"
+                  height="250"
+                  alt="cat image"
+                />
+                <p>
+                  Sure! Public and private keys are used in Bitcoin to provide
+                  security and to ensure that only the owner of a Bitcoin
+                  address
+                </p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <div id="content">
+          <div id="title">
+            <p>CatGPT</p>
+          </div>
+          <div id="features">
+            <div class="col">
+              <div class="feature-name">
+                <i class="fa-regular fa-lightbulb icon"></i>
+                <p>Examples</p>
+              </div>
+              <ul>
+                <li>"Explain how cats use quantum mechanics in hunting"</li>
+                <li>
+                  "Got any creative ideas for a cat's 10th birthday
+                  celebration?"
+                </li>
+                <li>"How do cats make HTTP requests using cat-script?"</li>
+              </ul>
+            </div>
+            <div class="col">
+              <div class="feature-name">
+                <i class="fa-solid fa-bolt icon"></i>
+                <p>Capabilities</p>
+              </div>
+              <ul>
+                <li>Remember where user buried all the treats</li>
+                <li>Allow user to act with good cat-tention to detail</li>
+                <li>Trained to decline walks and bath requests</li>
+              </ul>
+            </div>
+            <div class="col">
+              <div class="feature-name">
+                <i class="fa-solid fa-triangle-exclamation icon"></i>
+                <p>Limitations</p>
+              </div>
+              <ul>
+                <li>May occasionally generate a toy mouse</li>
+                <li>May occasionally ignore or produce furballs</li>
+                <li>Limited Knowledge of world and cat videos after 2021</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="chat-input-section">
+          <div class="wrapper">
+            <div id="input-text">
+              <textarea name="" cols="30" rows="1"></textarea>
+              <button id="submitBtn">
+                <i class="fa-regular fa-paper-plane"></i>
+              </button>
+            </div>
+            <p>
+              CatGPT Feb 25 Version. Developed by Mitty. Our goal is to Spread
+              Awareness and Raise Support. Donate Mitty some food and sand!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
