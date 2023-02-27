@@ -2,6 +2,7 @@
     --text-color: #fff;
     --white: #fff;
     --menu-width: 230px;
+    --mobile-menu-height: 50px;
     --primary-color: #343541;
 }
 
@@ -280,7 +281,7 @@ body {
         bottom: 0;
         left: 0;
         background-color: rgba(86,88,105,.75);
-        z-index: 1;
+        z-index: 2;
         opacity: 0;
         transition: all 0.3s ease-in-out;
         display: none;
@@ -307,7 +308,7 @@ body {
         margin-left: -350px;
         height: 100%;
         transition: all 0.3s ease-out;
-        z-index: 2;
+        z-index: 3;
     }
     #main {
         margin-left: 0;
@@ -324,13 +325,23 @@ body {
         flex-direction: column;
     }
 
+    #chat-section {
+        margin-top: var(--mobile-menu-height);
+    }
+
     #mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--mobile-menu-height);
         display: flex;
         padding: 8px;
         align-items: center;
         justify-content: space-between;
         background-color: var(--primary-color);
         border-bottom: 1px solid hsla(0,0%,100%,.2);
+        z-index: 1;
     }
 
     .new-chat-btn.btn-mobile {
