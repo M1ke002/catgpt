@@ -3,6 +3,7 @@ const submitBtn = document.getElementById("submitBtn");
 const newChatBtns = document.getElementsByClassName("new-chat-btn");
 const menuBtn = document.getElementById("menu-btn");
 const closeMenuBtn = document.getElementById("close-btn-mobile");
+const switchThemeBtn = document.getElementById("switch-theme");
 const sideMenu = document.getElementById("left-menu");
 const chatSection = document.getElementById("chat-section");
 const blurBackground = document.getElementById("blur");
@@ -194,6 +195,13 @@ submitBtn.onclick = () => {
   input.value = "";
 };
 
+input.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    submitBtn.click();
+  }
+});
+
 for (let i = 0; i < newChatBtns.length; i++) {
   const newChatBtn = newChatBtns[i];
   newChatBtn.onclick = () => {
@@ -228,5 +236,33 @@ menuBtn.onclick = () => {
   }
 };
 
+switchThemeBtn.onclick = () => {
+  const lightThemeIcon = switchThemeBtn.querySelector(".light-theme-icon");
+  const darkThemeIcon = switchThemeBtn.querySelector(".dark-theme-icon");
+  const text = switchThemeBtn.getElementsByTagName("span")[0];
+  if (document.body.classList.contains("dark-theme")) {
+    document.body.classList.remove("dark-theme");
+    darkThemeIcon.classList.remove("hide");
+    lightThemeIcon.classList.add("hide");
+    text.innerHTML = "Dark mode";
+    localStorage.setItem("theme", "light");
+  } else {
+    document.body.classList.add("dark-theme");
+    lightThemeIcon.classList.remove("hide");
+    darkThemeIcon.classList.add("hide");
+    text.innerHTML = "Light mode";
+    localStorage.setItem("theme", "dark");
+  }
+};
+
 blurBackground.onclick = closeMenu;
 closeMenuBtn.onclick = closeMenu;
+
+// load theme from localStorage
+const theme = localStorage.getItem("theme");
+if (theme === "dark") {
+  document.body.classList.add("dark-theme");
+  switchThemeBtn.querySelector(".light-theme-icon").classList.remove("hide");
+  switchThemeBtn.querySelector(".dark-theme-icon").classList.add("hide");
+  switchThemeBtn.getElementsByTagName("span")[0].innerHTML = "Light mode";
+}
